@@ -43,7 +43,7 @@
                 // $sql = 'SELECT * FROM posts WHERE author = ?'; // Query that selects all posts by author
                 // $stmt = $pdo->prepare($sql);
                 // $stmt->execute([$author]); // Inserts $author where '?' is in $sql
-                // $posts = $stmt->fetchAll();
+                // $posts = $stmt->fetchAll(); // Fetches all of the posts
 
                 // // var_dump($posts); // Displays an array for all posts with the author of "Dallas"
                 // foreach($posts as $post){
@@ -60,8 +60,8 @@
 
                 // $sql = 'SELECT * FROM posts WHERE author = :author && is_published = :is_published'; // Query that selects all posts by author and if they have been published
                 // $stmt = $pdo->prepare($sql);
-                // $stmt->execute(['author' => $author, 'is_published' => $is_published]); // Inserts $author where '?' is in $sql
-                // $posts = $stmt->fetchAll();
+                // $stmt->execute(['author' => $author, 'is_published' => $is_published]);
+                // $posts = $stmt->fetchAll(); // Fetches all of the posts
 
                 // // var_dump($posts); // Displays an array for all posts with the author of "Dallas" and that have been published
                 // foreach($posts as $post){
@@ -70,5 +70,21 @@
 
                 // }
 
-        # Fetch Single Posts #
+        # Fetch Single Post #
+
+            // // User input
+            // $id = 1;
+
+            // $sql = 'SELECT * FROM posts WHERE id = :id'; // Query that selects all posts by author and if they have been published
+            // $stmt = $pdo->prepare($sql);
+            // $stmt->execute(['id' => $id]);
+            // $post = $stmt->fetch(); // Fetches only on item
+
+            // echo $post->body; // Outputs "This is post one!" (Note: HTML alternative below)
+
 ?>
+
+<!-- HTML Example For # Fetch Single Post # -->
+<!-- <h1><?php echo $post->title; ?></h1>
+
+<p><?php echo $post->body; ?></p> -->
