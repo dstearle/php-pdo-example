@@ -11,4 +11,14 @@
     // Create a PDO instance
     $pdo = new PDO($dsn, $user, $password);
 
+    ## PDO Query ##
+
+    $stmt = $pdo->query('SELECT * FROM posts');
+
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+        echo $row['title'] . '<br>';
+        
+    }
+
 ?>
