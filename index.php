@@ -33,22 +33,42 @@
         // Unsafe
         // $sql = "SELECT * FROM posts WHERE author = '$author'";
 
-        // Fetch multiple posts (positional params & named params)
+        # Fetch multiple posts (positional params & named params) #
 
-        // User input
-        $author = 'Dallas';
+            // Positional params
 
-        // Positional params
-            // $sql = 'SELECT * FROM posts WHERE author = ?';
-            // $stmt = $pdo->prepare($sql);
-            // $stmt->execute([$author]); // Inserts $author where '?' is in $sql
-            // $posts = $stmt->fetchAll();
+                // User input
+                // $author = 'Dallas';
 
-            // // var_dump($posts); // Displays an array for all posts with the author of "Dallas"
-            // foreach($posts as $post){
+                // $sql = 'SELECT * FROM posts WHERE author = ?'; // Query that selects all posts by author
+                // $stmt = $pdo->prepare($sql);
+                // $stmt->execute([$author]); // Inserts $author where '?' is in $sql
+                // $posts = $stmt->fetchAll();
 
-            //     echo $post->title . "<br>"; // Displays a list of all posts with the author of "Dallas"
+                // // var_dump($posts); // Displays an array for all posts with the author of "Dallas"
+                // foreach($posts as $post){
 
-            // }
+                //     echo $post->title . "<br>"; // Displays a list of all posts with the author of "Dallas"
 
+                // }
+                
+            // Named params
+
+                // User input
+                // $author = 'Dallas';
+                // $is_published = true;
+
+                // $sql = 'SELECT * FROM posts WHERE author = :author && is_published = :is_published'; // Query that selects all posts by author and if they have been published
+                // $stmt = $pdo->prepare($sql);
+                // $stmt->execute(['author' => $author, 'is_published' => $is_published]); // Inserts $author where '?' is in $sql
+                // $posts = $stmt->fetchAll();
+
+                // // var_dump($posts); // Displays an array for all posts with the author of "Dallas" and that have been published
+                // foreach($posts as $post){
+
+                //     echo $post->title . "<br>"; // Displays a list of all posts with the author of "Dallas" and that have been published
+
+                // }
+
+        # Fetch Single Posts #
 ?>
